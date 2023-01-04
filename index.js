@@ -23,7 +23,11 @@ const io = new Server(httpServer,  {
         });
         socket.on('new-liked', (socket) => {
             io.emit('like-notification', JSON.stringify(socket))
-        });
+        })
+        socket.on('new-post', (socket) => {
+            io.emit('post-notification', JSON.stringify(socket))
+        })
+        ;
     });
 
 httpServer.listen(port);
