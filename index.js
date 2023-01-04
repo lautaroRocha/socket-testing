@@ -7,7 +7,7 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer,  {
     cors: {
-        origin: "https://devplacetalk.firebaseapp.com"
+        origin: ["https://devplacetalk.firebaseapp.com", "http://localhost:3000"]
     }});
 
     io.on('connection', (socket) => {
